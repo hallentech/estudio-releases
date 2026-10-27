@@ -9,6 +9,8 @@
   <meta property="og:description" content="Peça o vídeo, aprove cada etapa e receba pronto. Cortes, montagem, música e legenda feitos pela IA no seu Mac.">
   <meta property="og:image" content="https://estudio.hallentech.com/telas/portao-cortes.png">
   <meta name="theme-color" content="#0b0e14">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <style>
     :root {
       --fundo: #0b0e14; --painel: #131822; --linha: #232a36; --texto: #e7ebf1; --suave: #8d97a7;
@@ -26,11 +28,11 @@
       -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; }
-    .largura { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .largura { max-width: 1120px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px; }
     header { padding: 18px 0; }
     header .largura { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .logo { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; }
-    .logo i { width: 14px; height: 14px; border-radius: 4px; background: linear-gradient(135deg, var(--marca2), var(--marca)); display: inline-block; }
+    .logo img { width: 30px; height: 30px; display: block; }
     nav a { color: var(--suave); text-decoration: none; margin-left: 22px; font-size: 15px; }
     nav a:hover { color: var(--texto); }
     .hero { text-align: center; padding: 56px 0 24px; }
@@ -72,8 +74,14 @@
     .grade .cartao h3 { font-size: 16px; }
     .instalar { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; counter-reset: p; }
     code { font: 13.5px/1.4 ui-monospace, "SF Mono", Menlo, monospace; background: var(--fundo); border: 1px solid var(--linha); border-radius: 6px; padding: 2px 6px; }
-    footer { padding: 72px 0 48px; color: var(--suave); font-size: 14px; text-align: center; }
-    footer a { color: var(--texto); }
+    footer.largura { padding-bottom: 44px; margin-top: 88px; color: var(--suave); font-size: 14px; text-align: center; }
+    footer .linha-topo { border-top: 1px solid var(--linha); padding-top: 34px; }
+    .feito { display: inline-flex; align-items: center; gap: 12px; font-size: 16px; text-decoration: none; color: var(--suave); }
+    .feito img { height: 34px; width: auto; display: block; }
+    .feito strong { color: var(--texto); font-weight: 600; font-size: 17px; }
+    .feito:hover strong { text-decoration: underline; }
+    footer .pacotes { margin-top: 14px; font-size: 13px; }
+    footer .pacotes a { color: var(--suave); }
     @media (max-width: 820px) {
       .tela, .tela.inversa { grid-template-columns: 1fr; gap: 18px; }
       .tela.inversa .texto { order: 0; }
@@ -84,7 +92,7 @@
 <body>
   <header>
     <div class="largura">
-      <a class="logo" href="#"><i></i>Estúdio</a>
+      <a class="logo" href="#"><img src="icone.png" alt="">Estúdio</a>
       <nav><a href="#como">Como funciona</a><a href="#telas">Telas</a><a href="#instalar">Instalar</a></nav>
     </div>
   </header>
@@ -165,7 +173,10 @@
   </main>
 
   <footer class="largura">
-    Feito pela <a href="https://hallentech.com">Hallen Tech</a>. Os pacotes de cada versão ficam em <a href="https://github.com/hallentech/estudio-releases/releases">github.com/hallentech/estudio-releases</a>.
+    <div class="linha-topo">
+      <a class="feito" href="https://hallentech.com">Feito pela <img src="hallen-tech.png" alt=""><strong>Hallen Tech</strong></a>
+      <div class="pacotes">Os pacotes de cada versão ficam em <a href="https://github.com/hallentech/estudio-releases/releases">github.com/hallentech/estudio-releases</a>.</div>
+    </div>
   </footer>
 
   <script>

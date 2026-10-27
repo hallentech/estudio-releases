@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/icone.png" alt="" width="96">
+
 # Estúdio
 
 **Peça o vídeo, aprove cada etapa e receba pronto.**
