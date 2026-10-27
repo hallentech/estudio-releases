@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estúdio | Hallen Tech</title>
+  <meta name="description" content="App de Mac da Hallen Tech para produzir vídeos com inteligência artificial: peça o vídeo, aprove cada etapa e receba pronto.">
+  <meta property="og:title" content="Estúdio | Hallen Tech">
+  <meta property="og:description" content="Peça o vídeo, aprove cada etapa e receba pronto. Cortes, montagem, música e legenda feitos pela IA no seu Mac.">
+  <meta property="og:image" content="https://hallentech.github.io/estudio-releases/telas/portao-cortes.png">
+  <meta name="theme-color" content="#0b0e14">
+  <style>
+    :root {
+      --fundo: #0b0e14; --painel: #131822; --linha: #232a36; --texto: #e7ebf1; --suave: #8d97a7;
+      --marca: #fe7602; --marca2: #ffc301; --sobre-marca: #0b0e14;
+      --raio: 14px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --fundo: #f5f5f7; --painel: #ffffff; --linha: #dfe2e8; --texto: #1d1d1f; --suave: #5f6673; --sobre-marca: #1d1d1f; }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--fundo); color: var(--texto);
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .largura { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    header { padding: 18px 0; }
+    header .largura { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; }
+    .logo i { width: 14px; height: 14px; border-radius: 4px; background: linear-gradient(135deg, var(--marca2), var(--marca)); display: inline-block; }
+    nav a { color: var(--suave); text-decoration: none; margin-left: 22px; font-size: 15px; }
+    nav a:hover { color: var(--texto); }
+    .hero { text-align: center; padding: 56px 0 24px; }
+    .hero h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 18px; }
+    .hero h1 span { background: linear-gradient(90deg, var(--marca2), var(--marca)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p { color: var(--suave); font-size: clamp(17px, 2.2vw, 20px); max-width: 680px; margin: 0 auto 30px; }
+    .botoes { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .botao {
+      display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 12px;
+      font-weight: 600; text-decoration: none; font-size: 16px; transition: transform .15s ease, opacity .15s ease;
+    }
+    .botao:hover { transform: translateY(-1px); }
+    .botao.principal { background: linear-gradient(135deg, var(--marca2), var(--marca)); color: #1d1d1f; box-shadow: 0 10px 30px -10px rgba(254,118,2,.6); }
+    .botao.secundario { border: 1px solid var(--linha); color: var(--texto); }
+    .nota { color: var(--suave); font-size: 13.5px; margin-top: 14px; }
+    .moldura {
+      margin: 48px auto 0; border-radius: var(--raio); overflow: hidden; border: 1px solid var(--linha);
+      box-shadow: 0 40px 90px -30px rgba(0,0,0,.55); background: var(--painel);
+    }
+    .moldura .barra { display: flex; gap: 7px; padding: 11px 14px; border-bottom: 1px solid var(--linha); }
+    .moldura .barra b { width: 11px; height: 11px; border-radius: 50%; display: block; }
+    .moldura img { display: block; width: 100%; height: auto; }
+    section { padding: 72px 0 0; }
+    h2 { font-size: clamp(26px, 3.4vw, 36px); letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 12px; }
+    .sub { color: var(--suave); max-width: 700px; margin: 0 0 32px; font-size: 17px; }
+    .passos { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+    .cartao { background: var(--painel); border: 1px solid var(--linha); border-radius: var(--raio); padding: 22px; }
+    .cartao .n { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font-weight: 700; font-size: 14px; background: rgba(254,118,2,.14); color: var(--marca); margin-bottom: 14px; }
+    .cartao h3 { margin: 0 0 6px; font-size: 17px; }
+    .cartao p { margin: 0; color: var(--suave); font-size: 15px; }
+    .tela { display: grid; grid-template-columns: 1fr 1.6fr; gap: 36px; align-items: center; margin-top: 56px; }
+    .tela.inversa { grid-template-columns: 1.6fr 1fr; }
+    .tela.inversa .texto { order: 2; }
+    .tela img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--linha); display: block; box-shadow: 0 24px 60px -28px rgba(0,0,0,.5); }
+    .tela h3 { font-size: 22px; margin: 0 0 10px; letter-spacing: -0.01em; }
+    .tela p { color: var(--suave); margin: 0; }
+    .rotulo { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--marca); margin-bottom: 10px; }
+    .grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .grade .cartao h3 { font-size: 16px; }
+    .instalar { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; counter-reset: p; }
+    code { font: 13.5px/1.4 ui-monospace, "SF Mono", Menlo, monospace; background: var(--fundo); border: 1px solid var(--linha); border-radius: 6px; padding: 2px 6px; }
+    footer { padding: 72px 0 48px; color: var(--suave); font-size: 14px; text-align: center; }
+    footer a { color: var(--texto); }
+    @media (max-width: 820px) {
+      .tela, .tela.inversa { grid-template-columns: 1fr; gap: 18px; }
+      .tela.inversa .texto { order: 0; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="largura">
+      <a class="logo" href="#"><i></i>Estúdio</a>
+      <nav><a href="#como">Como funciona</a><a href="#telas">Telas</a><a href="#instalar">Instalar</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero largura">
+      <h1>Peça o vídeo.<br><span>Aprove cada etapa.</span></h1>
+      <p>O Estúdio é o app de Mac da Hallen Tech para produzir vídeos com inteligência artificial: do material que você gravou ao corte final, com cortes, montagem, música e legenda feitos no seu Mac.</p>
+      <div class="botoes">
+        <a class="botao principal" id="baixar" href="https://github.com/hallentech/estudio-releases/releases/latest">Baixar para Mac</a>
+        <a class="botao secundario" href="#como">Como funciona</a>
+      </div>
+      <div class="nota" id="versao">Para Mac com Apple Silicon ou Intel. Assinado e notarizado pela Apple.</div>
+      <div class="moldura">
+        <div class="barra"><b style="background:#ff5f57"></b><b style="background:#febc2e"></b><b style="background:#28c840"></b></div>
+        <img src="telas/portao-cortes.png" alt="Aprovação dos cortes tomada por tomada, com o player do trecho e o ajuste de início e fim">
+      </div>
+    </div>
+
+    <section id="como" class="largura">
+      <h2>Como funciona</h2>
+      <p class="sub">Você diz o que quer e aprova. A IA faz o trabalho pesado e para nas etapas que importam, com o material na tela para você conferir.</p>
+      <div class="passos">
+        <div class="cartao"><div class="n">1</div><h3>Peça</h3><p>Escreva o pedido, escolha o destino e solte os vídeos gravados e a música.</p></div>
+        <div class="cartao"><div class="n">2</div><h3>A IA trabalha</h3><p>Transcreve, escolhe as tomadas, corta, monta, coloca a música por baixo da fala e legenda.</p></div>
+        <div class="cartao"><div class="n">3</div><h3>Você aprova</h3><p>Cada etapa importante espera o seu OK: cortes tomada por tomada, narração e vídeo final.</p></div>
+        <div class="cartao"><div class="n">4</div><h3>Pronto</h3><p>O vídeo sai nos formatos do pedido, vertical para Reels e Shorts ou horizontal.</p></div>
+      </div>
+    </section>
+
+    <section id="telas" class="largura">
+      <span class="rotulo">Por dentro</span>
+      <h2>Feito para quem produz</h2>
+
+      <div class="tela">
+        <div class="texto"><h3>Painel de cada projeto</h3><p>Produções, conversas e o que está esperando por você, projeto por projeto, numa janela de Mac de verdade: barra de menus, ⌘K para buscar e tema claro ou escuro conforme o sistema.</p></div>
+        <img src="telas/painel.png" alt="Painel do projeto com produções e conversas recentes" loading="lazy">
+      </div>
+
+      <div class="tela inversa">
+        <div class="texto"><h3>Novo pedido</h3><p>Tipo, destino, quando publicar, narração (voz clonada, áudio do próprio vídeo ou sem narração) e o motor de IA de cada pedido. Os vídeos brutos e a música entram arrastando do Finder.</p></div>
+        <img src="telas/novo-pedido.png" alt="Formulário do novo pedido com tipo, destino, narração, motor e material" loading="lazy">
+      </div>
+
+      <div class="tela">
+        <div class="texto"><h3>Aprovação tomada por tomada</h3><p>Cada tomada com o player do trecho, a duração e o que é falado. Aprove, descarte ou ajuste o início e o fim pelo ponto do player, veja a montagem e mande a decisão de volta.</p></div>
+        <img src="telas/portoes.png" alt="Portão de cortes aprovado: 2 tomadas aprovadas, 1 descartada, 1 ajustada" loading="lazy">
+      </div>
+
+      <div class="tela inversa">
+        <div class="texto"><h3>A conversa com a IA</h3><p>Cada pedido vira uma conversa: o que a IA fez, as decisões de cada etapa e o que vem em seguida. Peça ajustes a qualquer momento, também de dentro da produção.</p></div>
+        <img src="telas/conversa.png" alt="Conversa da produção com o pedido, a aprovação dos cortes e a próxima etapa" loading="lazy">
+      </div>
+    </section>
+
+    <section class="largura">
+      <h2>E mais</h2>
+      <p class="sub">O que torna o dia a dia mais leve.</p>
+      <div class="grade">
+        <div class="cartao"><h3>Primeira abertura guiada</h3><p>Seu nome, a pasta dos projetos, o motor de IA e as ferramentas do Mac, e o primeiro projeto já pronto.</p></div>
+        <div class="cartao"><h3>Claude Code ou Abacus</h3><p>Escolha o motor de IA por projeto, com a sua própria conta.</p></div>
+        <div class="cartao"><h3>Avisos do macOS</h3><p>Quando a IA precisa de você, o aviso leva direto para a conversa que está esperando.</p></div>
+        <div class="cartao"><h3>@ para citar outro projeto</h3><p>A IA consulta materiais de outro projeto sem misturar as regras do pedido.</p></div>
+        <div class="cartao"><h3>Seus arquivos ficam com você</h3><p>Vídeos, projetos e conversas ficam no seu Mac.</p></div>
+        <div class="cartao"><h3>Atualização automática</h3><p>As versões novas chegam sozinhas, assinadas pela Hallen Tech.</p></div>
+      </div>
+    </section>
+
+    <section id="instalar" class="largura">
+      <h2>Instalar</h2>
+      <p class="sub">Leva um minuto. O app é assinado com o Developer ID da Hallen Tech e notarizado pela Apple, então abre direto.</p>
+      <div class="instalar">
+        <div class="cartao"><div class="n">1</div><h3>Baixe</h3><p>Clique em <a href="#" onclick="document.getElementById('baixar').click(); return false;">Baixar para Mac</a> e abra o <code>.dmg</code>.</p></div>
+        <div class="cartao"><div class="n">2</div><h3>Arraste</h3><p>Leve o Estúdio para a pasta Aplicativos e abra.</p></div>
+        <div class="cartao"><div class="n">3</div><h3>Configure</h3><p>Siga o passo a passo. Você vai precisar do Claude Code ou do Abacus com login e do ffmpeg; o Estúdio mostra os comandos.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="largura">
+    Feito pela <a href="https://hallentech.com">Hallen Tech</a>. Os pacotes de cada versão ficam em <a href="https://github.com/hallentech/estudio-releases/releases">github.com/hallentech/estudio-releases</a>.
+  </footer>
+
+  <script>
+    // Botão de download: o .dmg da release mais nova, pela API pública do GitHub. Se a API não responder, o botão
+    // continua levando para a página da release mais nova.
+    fetch('https://api.github.com/repos/hallentech/estudio-releases/releases/latest')
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((rel) => {
+        const dmg = (rel.assets || []).find((a) => a.name.endsWith('.dmg'));
+        if (!dmg) return;
+        document.getElementById('baixar').href = dmg.browser_download_url;
+        const mb = Math.round(dmg.size / 1e6);
+        const versao = String(rel.tag_name || '').replace(/^v/, '');
+        document.getElementById('versao').textContent = `Versão ${versao}, ${mb} MB. Para Mac com Apple Silicon ou Intel. Assinado e notarizado pela Apple.`;
+      })
+      .catch(() => {});
+  </script>
+</body>
+</html>

@@ -9,7 +9,7 @@ App de Mac da Hallen Tech para produzir vídeos com inteligência artificial, do
 
 Para Mac com Apple Silicon ou Intel
 
-<img src="telas/portao-cortes.png" alt="Aprovação dos cortes tomada por tomada, com o player do trecho e o ajuste de início e fim" width="900">
+<img src="docs/telas/portao-cortes.png" alt="Aprovação dos cortes tomada por tomada, com o player do trecho e o ajuste de início e fim" width="900">
 
 </div>
 
@@ -29,16 +29,16 @@ ficam no seu Mac.
 
 Produções, conversas e o que está esperando por você, projeto por projeto.
 
-<img src="telas/painel.png" alt="Painel do projeto com produções e conversas recentes" width="900">
+<img src="docs/telas/painel.png" alt="Painel do projeto com produções e conversas recentes" width="900">
 
 ### Novo pedido
 
 Tipo, destino, quando publicar, narração (voz clonada, áudio do próprio vídeo ou sem narração) e o motor de IA de cada
 pedido. Os vídeos brutos e a música entram arrastando do Finder.
 
-<img src="telas/novo-pedido.png" alt="Formulário do novo pedido com tipo, destino, narração, motor e material" width="900">
+<img src="docs/telas/novo-pedido.png" alt="Formulário do novo pedido com tipo, destino, narração, motor e material" width="900">
 
-<p align="center"><img src="telas/material.png" alt="Área para soltar os vídeos brutos e a música do pedido" width="520"></p>
+<p align="center"><img src="docs/telas/material.png" alt="Área para soltar os vídeos brutos e a música do pedido" width="520"></p>
 
 ### Aprovação tomada por tomada
 
@@ -46,16 +46,16 @@ A IA propõe os cortes e o Estúdio mostra cada tomada com o player do trecho, a
 descarta ou ajusta o início e o fim (com o ponto do player), vê a montagem antes de aprovar, e a decisão volta para a
 IA com a lista final.
 
-<p align="center"><img src="telas/portoes.png" alt="Portão de cortes aprovado: 2 tomadas aprovadas, 1 descartada, 1 ajustada" width="500"></p>
+<p align="center"><img src="docs/telas/portoes.png" alt="Portão de cortes aprovado: 2 tomadas aprovadas, 1 descartada, 1 ajustada" width="500"></p>
 
 ### A conversa com a IA
 
 Cada pedido vira uma conversa: o que a IA fez, os comandos que rodou, as decisões das etapas e o que vem em seguida.
 Dá para pedir ajustes a qualquer momento, também de dentro da produção.
 
-<img src="telas/conversa.png" alt="Conversa da produção com o pedido, a aprovação dos cortes e a próxima etapa" width="900">
+<img src="docs/telas/conversa.png" alt="Conversa da produção com o pedido, a aprovação dos cortes e a próxima etapa" width="900">
 
-<p align="center"><img src="telas/conversas-da-producao.png" alt="Conversas e material dentro da tela da produção" width="380"></p>
+<p align="center"><img src="docs/telas/conversas-da-producao.png" alt="Conversas e material dentro da tela da produção" width="380"></p>
 
 ## Destaques
 
