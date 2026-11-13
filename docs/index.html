@@ -82,6 +82,14 @@
     .feito:hover strong { text-decoration: underline; }
     footer .pacotes { margin-top: 14px; font-size: 13px; }
     footer .pacotes a { color: var(--suave); }
+    .destaque { position: relative; }
+    .destaque .selo { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: 5px 11px; border-radius: 999px; background: linear-gradient(135deg, var(--marca2), var(--marca)); color: #1d1d1f; margin-bottom: 14px; }
+    .destaque h2 { font-size: clamp(30px, 4.6vw, 48px); line-height: 1.08; letter-spacing: -0.03em; max-width: 860px; }
+    .destaque h2 span { background: linear-gradient(90deg, #03e7fc, #0183fb); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .destaque .sub { max-width: 760px; }
+    .destaque .moldura { margin-top: 8px; box-shadow: 0 40px 100px -30px rgba(1,131,251,.45); }
+    .destaque .passos { margin-top: 28px; }
+    .destaque .cartao .n { background: rgba(3,231,252,.12); color: #03e7fc; }
     @media (max-width: 820px) {
       .tela, .tela.inversa { grid-template-columns: 1fr; gap: 18px; }
       .tela.inversa .texto { order: 0; }
@@ -93,7 +101,7 @@
   <header>
     <div class="largura">
       <a class="logo" href="#"><img src="icone.png" alt="">Estúdio</a>
-      <nav><a href="#como">Como funciona</a><a href="#telas">Telas</a><a href="#instalar">Instalar</a></nav>
+      <nav><a href="#galeria">Galeria 3D</a><a href="#como">Como funciona</a><a href="#telas">Telas</a><a href="#instalar">Instalar</a></nav>
     </div>
   </header>
 
@@ -120,6 +128,26 @@
         <div class="cartao"><div class="n">2</div><h3>A IA trabalha</h3><p>Transcreve, escolhe as tomadas, corta, monta, coloca a música por baixo da fala e legenda.</p></div>
         <div class="cartao"><div class="n">3</div><h3>Você aprova</h3><p>Cada etapa importante espera o seu OK: cortes tomada por tomada, narração e vídeo final.</p></div>
         <div class="cartao"><div class="n">4</div><h3>Pronto</h3><p>O vídeo sai nos formatos do pedido, vertical para Reels e Shorts ou horizontal.</p></div>
+      </div>
+    </section>
+
+    <section id="galeria" class="largura destaque">
+      <span class="selo">Novo</span>
+      <h2>Galeria 3D: <span>peça uma vez, use em todo vídeo.</span></h2>
+      <p class="sub">Escreva "um prédio em corte em que cada andar é uma sub-rede" e a IA constrói a peça animada em 3D, renderiza a prévia e para para você aprovar. Aprovada, ela entra na galeria, e qualquer projeto põe a peça no vídeo: basta citar a peça no pedido. A galeria já tem 27 peças, de robôs e planetas a datacenters, roteadores e telefones IP.</p>
+      <div class="moldura">
+        <div class="barra"><b style="background:#ff5f57"></b><b style="background:#febc2e"></b><b style="background:#28c840"></b></div>
+        <img src="telas/galeria.png" alt="Galeria 3D com as miniaturas das peças: bits de um endereço IPv4, carros e casas low-poly, datacenter de IA, ícones 3D, notebook, planeta e outras" loading="lazy">
+      </div>
+      <div class="passos">
+        <div class="cartao"><div class="n">1</div><h3>Peça por texto</h3><p>Descreva a peça no pedido "Artefato 3D". A IA escreve o código em Three.js, confere e manda a prévia.</p></div>
+        <div class="cartao"><div class="n">2</div><h3>Aprove a prévia</h3><p>A peça só entra na galeria depois do seu OK. Na galeria, a prévia toca ao passar o mouse.</p></div>
+        <div class="cartao"><div class="n">3</div><h3>Use em qualquer vídeo</h3><p>Busque por nome, categoria ou tag e cite no pedido, ou copie o comando. Cada vídeo guarda a sua cópia, então nada quebra quando a peça melhora.</p></div>
+        <div class="cartao"><div class="n">4</div><h3>Sempre igual no render</h3><p>Tudo sai do quadro do vídeo: o mesmo render dá o mesmo resultado, e modelos de terceiros só entram com licença livre registrada.</p></div>
+      </div>
+      <div class="tela">
+        <div class="texto"><h3>Saiba onde cada peça é usada</h3><p>Cada peça mostra em quais projetos e produções ela está, em que versão e quando foi copiada. Quando a galeria tem uma versão mais nova, a cópia antiga aparece marcada, com o comando para atualizar. Quer melhorar uma peça? Um clique abre o pedido de melhoria.</p></div>
+        <img src="telas/galeria-detalhe.png" alt="Detalhe do robô expressivo: prévia, animações, licença e a lista de onde é usado, com uma cópia marcada como desatualizada" loading="lazy">
       </div>
     </section>
 
@@ -166,6 +194,11 @@
         <div class="texto"><h3>Perguntas com resposta em um clique</h3><p>Quando a IA tem dúvidas sobre o enredo ou o roteiro, cada pergunta chega com as opções para clicar e espaço para a sua resposta. Nada de responder "1. opção A, 2. opção B" num texto.</p></div>
         <img src="telas/portao-perguntas.png" alt="Três perguntas do enredo, duas com a opção escolhida e uma com resposta escrita" loading="lazy">
       </div>
+
+      <div class="tela">
+        <div class="texto"><h3>Revisão: tudo o que espera por você, numa tela</h3><p>Vídeos, thumbnails e prévias de todos os projetos lado a lado. Aprove um por um ou marque vários e aprove de uma vez; peça ajuste com um comentário ali mesmo. O que pede escolha item a item abre na conversa.</p></div>
+        <img src="telas/revisao.png" alt="Tela de revisão com quatro aprovações de três projetos, duas marcadas para aprovar em lote" loading="lazy">
+      </div>
     </section>
 
     <section class="largura">
@@ -177,7 +210,9 @@
         <div class="cartao"><h3>Avisos do macOS</h3><p>Quando a IA precisa de você, o aviso leva direto para a conversa que está esperando.</p></div>
         <div class="cartao"><h3>@ para citar outro projeto</h3><p>A IA consulta materiais de outro projeto sem misturar as regras do pedido.</p></div>
         <div class="cartao"><h3>Seus arquivos ficam com você</h3><p>Vídeos, projetos e conversas ficam no seu Mac.</p></div>
-        <div class="cartao"><h3>Atualização automática</h3><p>As versões novas chegam sozinhas, assinadas pela Hallen Tech.</p></div>
+        <div class="cartao"><h3>Atualização automática</h3><p>As versões novas chegam sozinhas, assinadas pela Hallen Tech, e se instalam quando nenhuma conversa está trabalhando.</p></div>
+        <div class="cartao"><h3>Fila sob controle</h3><p>Passe um pedido para a frente, pause outro e limite quantas conversas cada projeto roda ao mesmo tempo.</p></div>
+        <div class="cartao"><h3>Quanto custa cada projeto</h3><p>O painel soma o gasto das conversas de cada projeto, mesmo sem relatório próprio.</p></div>
       </div>
     </section>
 
